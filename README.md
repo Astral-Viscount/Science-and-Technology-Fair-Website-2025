@@ -1,10 +1,10 @@
-# Science and Technology Fairs Website Redesign
+# NIWA Canterbury-Westland Schools Science and Technology Fair Website Redesign
 
-Welcome to the official repository for the **Science and Technology Fair Website Redesign Project**, developed for the **Tech Fair 2025**. This project is an initiative by members of the Science & Tech Club from Burnside High School to modernize, improve, and enhance the club's current web presence.
+Welcome to the official repository for the **NIWA Canterbury-Westland Schools Science and Technology Fair Website Redesign Project**, developed for the **Tech Fair 2025**. This project is an initiative by members of the Science & Tech Club from Burnside High School to modernize, improve, and enhance the current web presence.
 
 ## 🚀 Project Overview
 
-The current Science and Technology Fair's website is outdated, hard to navigate, and not mobile-friendly. For the 2025 Tech Fair, we are rebuilding it from the ground up with a fresh design, better structure, and improved features.
+The current NIWA Canterbury-Westland Schools Science and Technology Fair's website is outdated, hard to navigate, and not mobile-friendly. For the 2025 Tech Fair, we are rebuilding it from the ground up with a fresh design, better structure, and improved features.
 
 **Goals:**
 - Create a clean, modern, and responsive website.
@@ -84,7 +84,7 @@ _This structure will be updated as development progresses._
 | Date         | Milestone                    |
 |--------------|------------------------------|
 | Week 1       | Research + Planning           |
-| Week 2–3     | Wireframing & Design          |
+| Week 2 – 3     | Wireframing & Design          |
 
 _Will Be Updated As the Project Progresses_
 
@@ -98,8 +98,8 @@ We will present:
 
 ## ✅ License
 
-This project is for educational and showcase purposes. All images and media used are either owned by the cience and Technology Fair organizatoin or the NIWA organization or properly credited.
+This project is for educational and showcase purposes. All images and media used are either owned by the NIWA Canterbury-Westland Schools Science and Technology Fair organizatoin or the NIWA organization or properly credited.
 
 ---
 
-🎉 Thanks for checking out our project! We hope our redesign will inspire other clubs to modernize their presence too.
+🎉 Thanks for checking out our project! We hope our redesign will inspire other old conventionally poor designed websites to modernize their presence too.
