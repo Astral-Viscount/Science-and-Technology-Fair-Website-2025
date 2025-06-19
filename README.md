@@ -38,11 +38,19 @@ The current Science and Technology Fair's website is outdated, hard to navigate,
 - [.gitignore](./.gitignore) – Git ignored files
 
 <details>
-<summary><strong>📁 assets</strong></summary>
-
-- [assets/css/style.css](./assets/css/style.css) – Stylesheet  
-- [assets/js/script.js](./assets/js/script.js) – JavaScript  
+<summary><strong>📁 assets</strong></summary> 
 - [assets/images/](./assets/images/) – Images folder  
+</details>
+
+<details>
+<summary><strong>📁 js</strong></summary> 
+- [js/script.js](./js/script.js) – JavaScript
+
+</details>
+
+<details>
+<summary><strong>📁 css</strong></summary> 
+- [css/script.js](./css/style.css) – Stylesheet
 
 </details>
 
