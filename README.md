@@ -39,17 +39,21 @@ The current Science and Technology Fair's website is outdated, hard to navigate,
 
 <details>
 <summary><strong>📁 assets</strong></summary> 
-- [assets/images/](./assets/images/) – Images folder  
+  
+- [assets/images/](./assets/images/) – Images folder
+- 
 </details>
 
 <details>
 <summary><strong>📁 js</strong></summary> 
+  
 - [js/script.js](./js/script.js) – JavaScript
 
 </details>
 
 <details>
 <summary><strong>📁 css</strong></summary> 
+  
 - [css/script.js](./css/style.css) – Stylesheet
 
 </details>
