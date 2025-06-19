@@ -41,7 +41,7 @@ The current Science and Technology Fair's website is outdated, hard to navigate,
 <summary><strong>📁 assets</strong></summary> 
   
 - [assets/images/](./assets/images/) – Images folder
-- 
+
 </details>
 
 <details>
