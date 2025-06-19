@@ -30,20 +30,33 @@ The current Science and Technology Fair's website is outdated, hard to navigate,
 - **Design Tools:** Figma / Canva (for mockups)
 
 ## 📁 Folder Structure
+<details>
+<summary><strong>📁 Project Root</strong></summary>
+
 - [index.html](./index.html) – Homepage  
 - [README.md](./README.md) – Project overview  
-- [.gitignore](./.gitignore)  
+- [.gitignore](./.gitignore) – Git ignored files
 
-**assets/**
+<details>
+<summary><strong>📁 assets</strong></summary>
+
 - [assets/css/style.css](./assets/css/style.css) – Stylesheet  
-- [assets/js/script.js](./assets/js/script.js) – JavaScript functionality  
+- [assets/js/script.js](./assets/js/script.js) – JavaScript  
 - [assets/images/](./assets/images/) – Images folder  
 
-**pages/**
+</details>
+
+<details>
+<summary><strong>📁 pages</strong></summary>
+
 - [pages/about.html](./pages/about.html) – About the club  
 - [pages/contact.html](./pages/contact.html) – Contact form  
 - [pages/events.html](./pages/events.html) – Events page  
-- [pages/projects.html](./pages/projects.html) – Projects showcase 
+- [pages/projects.html](./pages/projects.html) – Projects showcase  
+
+</details>
+
+</details>
 
 _This structure will be updated as development progresses._
 
