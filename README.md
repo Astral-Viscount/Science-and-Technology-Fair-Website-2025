@@ -74,7 +74,7 @@ _This structure will be updated as development progresses._
 
 ## 👥 Team Members
 
-- Mahi Mahatab - Year 11 -Astral-Viscount
+- Mahi Mahatab - Year 11 - Astral-Viscount
 - Sriram Muthukumaran - Year 11 - TheSriramM
 - Harrison Swaine - Year 11 - mojhy2
 - Brenton Graham - Year 11 - Skeletoes
