@@ -30,27 +30,51 @@ The current Science and Technology Fair's website is outdated, hard to navigate,
 - **Design Tools:** Figma / Canva (for mockups)
 
 ## 📁 Folder Structure
-/science-tech-website
-│
-├── index.html # Homepage
-├── about.html # About the club
-├── projects.html # Past and current projects
-├── events.html # Upcoming and past events
-├── contact.html # Contact form
-│
-├── /assets
-│ ├── /images # Club photos, logos, etc.
-│ └── /css # Stylesheets
-│
-├── .gitignore
-└── README.md
+<details>
+<summary><strong>📁 Project Root</strong></summary>
 
-_Will Be Updated As the Project Progresses_
+- [index.html](./index.html) – Homepage  
+- [README.md](./README.md) – Project overview  
+- [.gitignore](./.gitignore) – Git ignored files
 
+<details>
+<summary><strong>📁 assets</strong></summary> 
+  
+- [assets/images/](./assets/images/) – Images folder
+- 
+</details>
+
+<details>
+<summary><strong>📁 js</strong></summary> 
+  
+- [js/script.js](./js/script.js) – JavaScript
+
+</details>
+
+<details>
+<summary><strong>📁 css</strong></summary> 
+  
+- [css/script.js](./css/style.css) – Stylesheet
+
+</details>
+
+<details>
+<summary><strong>📁 pages</strong></summary>
+
+- [pages/about.html](./pages/about.html) – About the club  
+- [pages/contact.html](./pages/contact.html) – Contact form  
+- [pages/events.html](./pages/events.html) – Events page  
+- [pages/projects.html](./pages/projects.html) – Projects showcase  
+
+</details>
+
+</details>
+
+_This structure will be updated as development progresses._
 
 ## 👥 Team Members
 
-- Mahi Mahatab - Year 11 -Astral-Viscount
+- Mahi Mahatab - Year 11 - Astral-Viscount
 - Sriram Muthukumaran - Year 11 - TheSriramM
 - Harrison Swaine - Year 11 - mojhy2
 - Brenton Graham - Year 11 - Skeletoes
