@@ -27,10 +27,23 @@
     border-radius: 8px;
 }
 
-nav ul {
+.navigation {
+    background-color: rgb(12, 123, 138);
+    padding: 10px 20px;
+    
+}
+
+.navigation nav ul {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
     gap: 15px;
     padding: 0;
+}
+
+.navigation nav ul li a {
+    color: rgb(127, 180, 242);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
 }
