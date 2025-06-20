@@ -1,4 +1,36 @@
-/* img{
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px;
+}
+
+.text {
+    flex: 1 1 300px;
+    min-width: 280px;
+}
+
+.image {
+    flex: 1 1 300px;
+    min-width: 280px;
+}
+
+.image img {
     width: 100%;
     height: auto;
-} */
+    display: block;
+    border-radius: 8px;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 15px;
+    padding: 0;
+}
