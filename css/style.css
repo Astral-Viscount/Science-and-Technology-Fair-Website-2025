@@ -1,3 +1,13 @@
+h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+ul {
+    padding-left: 20px;
+    line-height: 1.8;
+}
+
 .container {
     max-width: 1200px;
     margin: auto;
@@ -46,4 +56,9 @@
     text-decoration: none;
     font-size: 18px;
     font-weight: 600;
+}
+
+.text p, .text li {
+    font-size: 16px;
+    color: #333;
 }
