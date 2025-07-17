@@ -78,6 +78,7 @@ _This structure will be updated as development progresses._
 - Sriram Muthukumaran - Year 11 - TheSriramM
 - Harrison Swaine - Year 11 - mojhy2
 - Brenton Graham - Year 11 - Skeletoes
+- Fibitius Chan - Year 11 - 28Noob
 
 ## 📅 Timeline
 
