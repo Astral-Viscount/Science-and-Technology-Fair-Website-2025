@@ -86,6 +86,7 @@ _This structure will be updated as development progresses._
 |--------------|------------------------------|
 | Week 1       | Research + Planning           |
 | Week 2 – 3     | Wireframing & Design          |
+| Week 4 – 5     | Basic Layout        |
 
 _Will Be Updated As the Project Progresses_
 
