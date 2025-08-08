@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Regional Science Fair",
+    "date": "2025-09-15",
+    "description": "A competition showcasing student STEM projects from across the region.",
+    "link": "pages/events/regional-science-fair.html"
+  },
+  {
+    "title": "Robotics Workshop",
+    "date": "2025-10-05",
+    "description": "Hands-on robotics training for beginners and enthusiasts.",
+    "link": "pages/events/robotics-workshop.html"
+  }
+]
