@@ -4,8 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    
+
+<header class="navigation">
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+    <h1>Upcoming Events</h1>
+    <div id="events-list"></div>
+</div>
+
+<script>
+fetch('../assets/data/events.json')
+    .then(response => response.json())
+    .then(events => {
+        const container = document.getElementById('events-list');
+        events.forEach(event => {
+            const eventCard = document.createElement('div');
+            eventCard.classList.add('event-card');
+            eventCard.innerHTML = `
+                <h2>${event.title}</h2>
+                <p><strong>Date:</strong> ${event.date}</p>
+                <p>${event.description}</p>
+                <a href="${event.link}">Learn More</a>
+            `;
+            container.appendChild(eventCard);
+        });
+    })
+    .catch(error => console.error('Error loading events:', error));
+</script>
+
 </body>
 </html>
