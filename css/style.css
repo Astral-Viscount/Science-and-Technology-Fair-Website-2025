@@ -62,3 +62,13 @@ ul {
     font-size: 16px;
     color: #333;
 }
+
+.footer {
+    display: flex;
+    margin: 5vh;
+}
+
+.logo img{
+    width: 30vh;
+    height: 10vh;
+}
