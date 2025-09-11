@@ -1,0 +1,37 @@
+[
+  {
+    "id": "announce-1",
+    "title": "2025 Dates Confirmed",
+    "date": "2025-05-20",
+    "summary": "Workshops in June, entries close 22 August, fair 15–17 September.",
+    "link": "pages/events.html"
+  },
+  {
+    "id": "announce-2",
+    "title": "New Sustainability Prize",
+    "date": "2025-06-02",
+    "summary": "Thanks to a new sponsor, we're introducing an environmental innovation award.",
+    "link": "pages/announcements.html"
+  },
+  {
+    "id": "announce-3",
+    "title": "Volunteer Judges Wanted",
+    "date": "2025-07-01",
+    "summary": "Scientists, engineers, and educators: help judge projects at the fair.",
+    "link": "pages/contact.html"
+  },
+  {
+    "id": "announce-4",
+    "title": "Workshop Registrations Open",
+    "date": "2025-05-28",
+    "summary": "Free student workshop at Ara Institute. Spaces are limited.",
+    "link": "pages/events.html"
+  },
+  {
+    "id": "resource-1",
+    "title": "Project Report Template",
+    "date": "2025-08-30",
+    "summary": "Download the official DOCX template to structure your project report.",
+    "link": "assets/resources/project-report-template.docx"
+  }
+]

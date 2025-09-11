@@ -1,0 +1,338 @@
+/*
+  Canterbury–Westland Science & Technology Fair
+  Global CSS — mobile-first, responsive, accessible
+
+  Header & Nav updates:
+  - Two-row header layout
+  - First row: logo/title (left) + CTAs (right)
+  - Second row: nav bar takes full width
+  - Mobile nav preserved
+*/
+
+:root {
+  --color-primary: #0063a5;
+  --color-secondary: #00a3a3;
+  --color-accent: #ffb703;
+  --color-bg: #ffffff;
+  --color-bg-soft: #f5f7fa;
+  --color-text: #1a1f2b;
+  --color-muted: #6b7280;
+
+  --radius: 12px;
+  --shadow: 0 4px 16px rgba(0,0,0,.08);
+  --container: 1100px;
+}
+
+[data-theme="dark"]{
+  --color-bg: #0b1220;
+  --color-bg-soft: #0f1628;
+  --color-text: #e5e7eb;
+  --color-muted: #9ca3af;
+  --shadow: 0 6px 24px rgba(0,0,0,.4);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color:var(--color-text);
+  background:var(--color-bg);
+  line-height:1.6;
+}
+
+img{max-width:100%; height:auto; display:block}
+.container{max-width:var(--container); margin-inline:auto; padding: clamp(12px, 2vw, 20px)}
+
+h1,h2,h3{font-family:Poppins, Inter, system-ui, -apple-system, "Segoe UI", Roboto; line-height:1.2}
+h1{font-size:clamp(2rem, 2.6vw + 1rem, 3rem); margin:.2em 0 .3em}
+h2{font-size:clamp(1.5rem, 1.4vw + 1rem, 2rem); margin:1.2em 0 .4em}
+h3{font-size:clamp(1.1rem, 1vw + .8rem, 1.4rem); margin:1em 0 .3em}
+
+p{margin:.6em 0}
+.muted{color:var(--color-muted)}
+.accent{color:var(--color-accent)}
+
+/* Links & buttons */
+a{color:var(--color-primary); text-decoration-color: color-mix(in oklab, var(--color-primary), transparent 60%)}
+a:focus-visible, button:focus-visible, .btn:focus-visible{outline:3px solid var(--color-accent); outline-offset:2px}
+.btn{display:inline-block; padding:.6em .9em; border-radius:10px; border:1px solid color-mix(in oklab, var(--color-text), transparent 80%); box-shadow:var(--shadow); text-decoration:none; color:var(--color-text); background:var(--color-bg-soft)}
+.btn:hover{transform:translateY(-1px)}
+.btn.primary{background:var(--color-primary); color:white; border-color:transparent}
+.btn.outline{background:transparent}
+
+/* Header */
+.skip-link{position:absolute; left:-9999px}
+.skip-link:focus{left:16px; top:16px; z-index:999; background:var(--color-accent); color:#111; padding:.5em 1em; border-radius:8px}
+
+.site-header{
+  position:sticky;
+  top:0;
+  background:var(--color-bg);
+  border-bottom:1px solid color-mix(in oklab, var(--color-text), transparent 90%);
+  z-index:10000;
+  will-change:transform;
+}
+
+/* Top row: logo + CTAs */
+.header-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding: 0.4rem clamp(12px, 2vw, 20px);
+  gap:16px;
+  flex-wrap:wrap;
+}
+.branding{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.branding .logo{
+  width:40px;
+  height:auto;
+}
+.branding h1{
+  font-size:1rem;
+  margin:0;
+}
+.header-actions{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+/* Second row: nav spans entire screen width */
+/* Full-width nav bar */
+.main-nav {
+  width: 100vw;                  /* Span entire viewport width */
+  margin: 0;
+  padding: 0;
+  background: var(--color-bg);
+  border-top: 1px solid color-mix(in oklab, var(--color-text), transparent 92%);
+  border-bottom: 1px solid color-mix(in oklab, var(--color-text), transparent 92%);
+}
+
+/* ensure the .container inside the nav doesn't constrain layout — let nav be full width */
+.main-nav .container {
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* target only the top-level nav list (prevents nested .submenu <ul> from becoming flex) */
+.main-nav > .container > ul {
+  display: flex;
+  justify-content: space-evenly; /* Even spacing across full width */
+  flex-wrap: nowrap;             /* Keep in one line */
+  list-style: none;
+  margin: 0;
+  padding: 0.35rem 0;            /* reduced vertical padding */
+  gap: 0;
+  width: 100%;
+}
+
+/* top-level items behave as equal columns */
+.main-nav > .container > ul > li {
+  flex: 1;
+  text-align: center;
+}
+
+.main-nav a{
+  text-decoration:none;
+  color:var(--color-primary);
+  font-weight:500;
+  padding:0.3em 0.5em;
+  border-radius:8px;
+}
+.main-nav a:hover,
+.main-nav a[aria-current="page"]{
+  background:var(--color-bg-soft);
+}
+
+/* Dropdown submenu (desktop) */
+.main-nav li {
+  position: relative;
+}
+
+/* submenu override: block layout, vertical stack */
+.submenu {
+  display: none;                 /* hidden by default */
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  min-width: 220px;
+  background: var(--color-bg);
+  border: 1px solid color-mix(in oklab, var(--color-text), transparent 88%);
+  border-radius: 12px;
+  padding: 8px 0;
+  box-shadow: 0 8px 24px rgba(0,0,0,.12);
+  z-index: 11000;
+  list-style: none;
+  flex-direction: column;        /* when displayed, stack vertically */
+}
+
+.submenu li {
+  width: 100%;
+}
+
+.submenu a {
+  display: block;
+  padding: 0.5em 1em;
+  color: var(--color-text);
+  text-decoration: none;
+  border-radius: 0;
+}
+
+.submenu a:hover {
+  background: var(--color-bg-soft);
+}
+
+/* Show submenu on hover/focus (desktop) */
+.has-submenu:hover > .submenu,
+.has-submenu:focus-within > .submenu {
+  display: block;
+}
+
+/* Also allow explicit open via class (used for mobile click toggle) */
+.has-submenu.open > .submenu {
+  display: block;
+}
+
+/* Submenu arrows inline with text (arrow is purely visual) */
+.has-submenu > a::after {
+  content: "▾";
+  margin-left: 0.3em;
+  font-size: 0.8em;
+  vertical-align: middle;
+  opacity: 0.8;
+}
+
+/* Mobile nav adjustments */
+@media (max-width: 860px) {
+  .main-nav > .container > ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .submenu {
+    position: static;
+    display: none;
+    box-shadow: none;
+    border: 0;
+    padding-left: 16px;
+    background: transparent;
+  }
+
+  .has-submenu > a::after {
+    content: "▸";
+  }
+  .has-submenu.open > a::after {
+    content: "▾";
+  }
+}
+
+/* Menu button */
+.menu-button{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  padding:.45em .6em;
+  border-radius:8px;
+  background:transparent;
+  border:0;
+  cursor:pointer;
+}
+.menu-button:after{content:'▾'; font-size:.8rem; opacity:.9}
+
+/* Mobile nav toggle */
+.nav-toggle{display:none}
+.nav-toggle-bar{display:block; width:22px; height:2px; background:var(--color-text); margin:4px 0}
+
+@media (max-width: 860px){
+  .header-top{flex-wrap:wrap}
+  .menu-button:after{content:'▸'}
+  .nav-toggle{display:block}
+}
+
+/* Theme toggle */
+.theme-toggle{border:1px solid color-mix(in oklab, var(--color-text), transparent 80%); background:transparent; border-radius:12px; padding:.6em}
+
+/* Hero */
+.hero{
+  background:linear-gradient(180deg, color-mix(in oklab, var(--color-primary), transparent 85%), transparent), var(--color-bg-soft);
+  position:relative;
+  z-index:0;
+}
+.hero-inner{display:grid; grid-template-columns:1.2fr 1fr; gap:24px; align-items:center}
+.hero-copy h1{margin-top:0}
+@media (max-width: 900px){.hero-inner{grid-template-columns:1fr}}
+
+/* NEW — make the hero image circular while preserving layout
+   - Forces equal width/height for the image, uses object-fit: cover to crop nicely.
+   - Adjust the clamp values to taste (min, responsive, max).
+*/
+.hero .hero-inner img,
+.hero > .container .hero-inner img {
+  /* ensure the hero image becomes a square that scales with viewport */
+  /* width: clamp(160px, 30vw, 420px);
+  height: clamp(160px, 30vw, 420px); */
+  border-radius: 50px; /* circle */
+  object-fit: cover;     /* crop to fit the square */
+  display: block;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  align-self: center;
+}
+
+/* Layout helpers, cards, footer, etc. — unchanged */
+.grid{display:grid; gap:20px}
+.grid-2{grid-template-columns:repeat(2, minmax(0,1fr))}
+.grid-3{grid-template-columns:repeat(3, minmax(0,1fr))}
+@media (max-width: 900px){.grid-2, .grid-3{grid-template-columns:1fr}}
+
+.cards{display:grid; gap:16px}
+.cards-3{grid-template-columns:repeat(3, minmax(0,1fr))}
+.cards-2{grid-template-columns:repeat(2, minmax(0,1fr))}
+@media (max-width: 900px){.cards-2, .cards-3{grid-template-columns:1fr}}
+
+.card{background:var(--color-bg); border:1px solid color-mix(in oklab, var(--color-text), transparent 88%); border-radius:12px; padding:clamp(12px, 1.2vw + 8px, 20px); box-shadow:var(--shadow)}
+.card h3{margin-top:0}
+.chips{display:flex; gap:8px; flex-wrap:wrap}
+.chip{display:inline-block; padding:.2em .6em; background:var(--color-bg-soft); border-radius:999px; font-size:.85em}
+.meta{font-size:.9em; color:var(--color-muted)}
+
+.input{width:100%; padding:.7em .8em; border-radius:12px; border:1px solid color-mix(in oklab, var(--color-text), transparent 80%); background:var(--color-bg)}
+.form-row{margin-bottom:12px}
+.filters{display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-bottom:16px}
+.search{flex:1}
+
+.breadcrumbs{color:var(--color-muted); font-size:.9em}
+
+.site-footer{margin-top:40px; border-top:1px solid color-mix(in oklab, var(--color-text), transparent 90%); background:var(--color-bg-soft)}
+.footer-grid{display:grid; gap:16px; grid-template-columns: 2fr 1fr 1fr}
+.footer-heading{margin:.6em 0}
+.footer-links{list-style:none; padding:0; margin:0}
+.footer-links a{display:block; padding:.3em 0}
+.footer-bottom{display:flex; justify-content:space-between; gap:12px; align-items:center; padding-top:0}
+@media (max-width: 900px){.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column; align-items:flex-start}}
+
+.cta-band{background:linear-gradient(90deg, color-mix(in oklab, var(--color-primary), transparent 85%), color-mix(in oklab, var(--color-secondary), transparent 85%)); margin:24px 0}
+.cta-inner{display:flex; align-items:center; justify-content:space-between; gap:16px}
+
+.lightbox-backdrop{position:fixed; inset:0; background:rgba(0,0,0,.6); display:none; align-items:center; justify-content:center; padding:24px}
+.lightbox-backdrop.open{display:flex}
+.lightbox-backdrop .content{max-width:min(1100px, 96vw); max-height:90vh}
+.lightbox-backdrop img{width:100%; height:auto; border-radius:12px}
+.lightbox-close{position:absolute; top:16px; right:16px; background:white; color:#111; border:0; border-radius:10px; padding:.4em .6em}
+
+/* Tables */
+.table{width:100%; border-collapse:separate; border-spacing:0}
+.table th, .table td{padding:.6em .8em; border-bottom:1px solid color-mix(in oklab, var(--color-text), transparent 88%)}
+.table th{text-align:left}
+
+@media print{
+  .site-header, .site-footer, .nav-ctas, .nav-toggle{display:none !important}
+  a[href]::after{content:" (" attr(href) ")"; font-size:.9em}
+}

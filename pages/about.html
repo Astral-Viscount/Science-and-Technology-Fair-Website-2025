@@ -1,42 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-NZ">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/style.css" />
-
-    <link rel="icon" type="image/png" href="../assets/images/canterbury-westland-schools-logo-favicon.png" />
-
-    <title>About Us</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — Canterbury–Westland Science & Technology Fair</title>
+  <meta name="description" content="Our mission, history, and how the fair works." />
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <script type="module" src="../assets/js/script.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header" data-sticky>
+    <div class="container header-inner">
+      <a class="brand" href="../index.html">
+        <img src="../assets/images/logo-placeholder.svg" alt="Fair logo" width="40" height="40" />
+        <span class="brand-title">Canterbury–Westland Science & Tech Fair</span>
+      </a>
+      <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a aria-current="page" href="about.html">About</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="members.html">Members</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="announcements.html">Announcements</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-ctas">
+          <a class="btn primary" href="projects.html#enter">Participate</a>
+          <a class="btn outline" href="contact.html#support">Support</a>
+          <button class="theme-toggle" aria-label="Toggle theme"><span class="theme-icon">🌓</span></button>
+        </div>
+      </nav>
+    </div>
+  </header>
 
-    <header class="navigation">
-        <nav>
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+  <main id="main" class="container">
+    <header class="page-header">
+      <nav class="breadcrumbs" aria-label="Breadcrumbs"><a href="../index.html">Home</a> / About</nav>
+      <h1>About the Fair</h1>
+      <p>The NIWA Canterbury–Westland Schools Science & Technology Fair is an annual celebration of mahi by young scientists and technologists across the region.</p>
     </header>
 
-    <div class="container">
+    <section class="grid grid-2">
+      <article class="card">
+        <h2>Our mission</h2>
+        <p>We inspire ākonga to explore real-world questions through science and technology. The fair provides an authentic platform to plan, investigate, and communicate findings, supported by teachers, whānau, and our partners.</p>
+      </article>
+      <article class="card">
+        <h2>Who can enter</h2>
+        <p>Students in Years 7–13 from schools across Canterbury and Westland. Entries are coordinated by schools — check with your science teacher for details.</p>
+      </article>
+      <article class="card">
+        <h2>How it works</h2>
+        <ol>
+          <li>Choose a topic and plan your investigation or build.</li>
+          <li>Conduct your experiment or develop your prototype safely and ethically.</li>
+          <li>Prepare a display board and short report.</li>
+          <li>Present your work to judges at the regional fair.</li>
+        </ol>
+        <p>See <a href="resources.html">Resources</a> for guidelines and templates.</p>
+      </article>
+      <article class="card">
+        <h2>Supporters</h2>
+        <p>We gratefully acknowledge NIWA and our local sponsors, universities, and community partners for enabling this event.</p>
+      </article>
+    </section>
+  </main>
 
-        <h1>About the Science & Technology Club</h1>
-
-        <div class="content">
-
-            <div class="text">
-                <p>We are a group of enthusiastic students passionate about science and technology. Our club encourages creativity, critical thinking, and hands-on exploration through projects, fairs, and innovation challenges.</p>
-                <p>Our goal is to foster curiosity and build real-world skills in areas like robotics, environmental science, programming, and engineering. We believe science and technology can shape a better future—and we're here to explore it together.</p>
-            </div>
-
-            <div class="image">
-                <img src="../assets/images/science-fair.jpg" alt="Science Fair">
-            </div>
-
-        </div>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="../index.html">
+          <img src="../assets/images/logo-placeholder.svg" alt="Fair logo" width="40" height="40" />
+          <span class="brand-title">Canterbury–Westland Science & Tech Fair</span>
+        </a>
+        <p class="muted">An independent, volunteer-run event proudly supported by NIWA and our regional partners.</p>
+      </div>
+      <nav aria-label="Footer">
+        <h3 class="footer-heading">Explore</h3>
+        <ul class="footer-links">
+          <li><a aria-current="page" href="about.html">About</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="announcements.html">Announcements</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h3 class="footer-heading">Contact</h3>
+        <address>
+          <p>Email: <a href="mailto:info@canterburysciencefair.co.nz">info@canterburysciencefair.co.nz</a></p>
+          <p>Christchurch, Aotearoa New Zealand</p>
+        </address>
+      </div>
     </div>
+    <div class="container footer-bottom">
+      <p class="muted">© <span data-year></span> Canterbury–Westland Schools Science & Technology Fair.</p>
+      <p><a href="../sitemap.xml">Sitemap</a> • <a href="../robots.txt">Robots</a></p>
+    </div>
+  </footer>
 </body>
 </html>

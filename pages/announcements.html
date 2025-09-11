@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Announcements — Canterbury–Westland Science & Technology Fair</title>
+  <meta name="description" content="News, updates, and important deadlines." />
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <script type="module" src="../assets/js/script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header" data-sticky>
+    <div class="container header-inner">
+      <a class="brand" href="../index.html">
+        <img src="../assets/images/logo-placeholder.svg" alt="Fair logo" width="40" height="40" />
+        <span class="brand-title">Canterbury–Westland Science & Tech Fair</span>
+      </a>
+      <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="members.html">Members</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a aria-current="page" href="announcements.html">Announcements</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-ctas">
+          <a class="btn primary" href="projects.html#enter">Participate</a>
+          <a class="btn outline" href="contact.html#support">Support</a>
+          <button class="theme-toggle" aria-label="Toggle theme"><span class="theme-icon">🌓</span></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <header class="page-header">
+      <nav class="breadcrumbs" aria-label="Breadcrumbs"><a href="../index.html">Home</a> / Announcements</nav>
+      <h1>Announcements</h1>
+      <p>News, updates, and important deadlines from the organising team.</p>
+    </header>
+
+    <section>
+      <div class="cards cards-3" data-json="../assets/data/announcements.json" data-component="announcements"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="../index.html">
+          <img src="../assets/images/logo-placeholder.svg" alt="Fair logo" width="40" height="40" />
+          <span class="brand-title">Canterbury–Westland Science & Tech Fair</span>
+        </a>
+        <p class="muted">An independent, volunteer-run event proudly supported by NIWA and our regional partners.</p>
+      </div>
+      <nav aria-label="Footer">
+        <h3 class="footer-heading">Explore</h3>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="announcements.html">Announcements</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h3 class="footer-heading">Contact</h3>
+        <address>
+          <p>Email: <a href="mailto:info@canterburysciencefair.co.nz">info@canterburysciencefair.co.nz</a></p>
+          <p>Christchurch, Aotearoa New Zealand</p>
+        </address>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p class="muted">© <span data-year></span> Canterbury–Westland Schools Science & Technology Fair.</p>
+      <p><a href="../sitemap.xml">Sitemap</a> • <a href="../robots.txt">Robots</a></p>
+    </div>
+  </footer>
+  <script>
+    /* Global JS — vanilla ES modules */
+
+// Theme toggle & persistence
+const root = document.documentElement;
+const storedTheme = localStorage.getItem('theme');
+if (storedTheme) root.setAttribute('data-theme', storedTheme);
+
+document.addEventListener('click', (e) => {
+  const toggler = e.target.closest('.theme-toggle');
+  const navToggle = e.target.closest('.nav-toggle');
+  if (toggler) {
+    const current = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', current);
+    localStorage.setItem('theme', current);
+  }
+  if (navToggle) {
+    const nav = document.getElementById(navToggle.getAttribute('aria-controls'));
+    const open = nav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', String(open));
+    if (open) nav.querySelector('a')?.focus();
+  }
+});
+
+// Year in footer
+for (const el of document.querySelectorAll('[data-year]')) el.textContent = new Date().getFullYear();
+
+// Utility: human date (NZ)
+export const formatNZDate = (isoDate, time) => {
+  try{
+    const dt = new Date(`${isoDate}${time? 'T'+time : ''}`);
+    return dt.toLocaleString('en-NZ', { dateStyle: 'long', timeStyle: time? 'short' : undefined });
+  }catch{ return isoDate }
+};
+
+// Fetch & render components
+const mountpoints = document.querySelectorAll('[data-json][data-component]');
+async function loadJSON(url){
+  const res = await fetch(url, {cache:'no-store'});
+  if(!res.ok) throw new Error('Failed to load '+url);
+  return res.json();
+}
+
+function renderEvents(list, limit){
+  const sorted = [...list].sort((a,b)=> new Date(a.date) - new Date(b.date));
+  const upcoming = sorted.filter(e => new Date(e.date) >= new Date(Date.now() - 86400000));
+  const items = (upcoming.length? upcoming : sorted).slice(0, limit || sorted.length);
+  return items.map(e => `<article class="card" id="${e.id}">
+    <h3>${e.title}</h3>
+    <p class="meta">${formatNZDate(e.date, e.time)} · ${e.location}</p>
+    <p>${e.description}</p>
+    <div class="chips"><span class="chip">${e.category}</span></div>
+    ${e.link ? `<p><a class="btn" href="${e.link}">Learn more</a></p>`: ''}
+  </article>`).join('');
+}
+
+function renderAnnouncements(list, limit){
+  const sorted = [...list].sort((a,b)=> new Date(b.date) - new Date(a.date));
+  return sorted.slice(0, limit || sorted.length).map(a => `<article class="card">
+    <h3>${a.title}</h3>
+    <p class="meta">${formatNZDate(a.date)}</p>
+    <p>${a.summary}</p>
+    ${a.link ? `<p><a class="btn" href="${a.link}">Read more</a></p>`: ''}
+  </article>`).join('');
+}
+
+function renderProjects(list, limit){
+  return list.slice(0, limit || list.length).map(p => `<article class="card">
+    <img src="${(p.images && p.images[0]) || 'assets/images/placeholder-1200x800.jpg'}" alt="${p.title}" loading="lazy" width="1200" height="800" />
+    <h3>${p.title}</h3>
+    <p class="meta">${p.student} · ${p.grade}</p>
+    <p>${p.summary}</p>
+    <div class="chips">${(p.category||[]).map(c=>`<span class="chip">${c}</span>`).join('')}</div>
+    ${p.detailsLink ? `<p><a class="btn" href="${p.detailsLink}">View details</a></p>`: ''}
+  </article>`).join('');
+}
+
+function renderMembers(list){
+  return list.map(m => `<article class="card" style="text-align:center">
+    <img src="${m.photo || '../assets/images/headshot-placeholder.png'}" alt="${m.name}" width="400" height="400" loading="lazy" style="border-radius:999px; margin-inline:auto; width:160px; height:160px; object-fit:cover" />
+    <h3>${m.name}</h3>
+    <p class="meta">${m.role}</p>
+    <p>${m.bio||''}</p>
+    ${m.email? `<p><a class="btn" href="mailto:${m.email}">Email</a></p>`:''}
+  </article>`).join('');
+}
+
+function renderResources(list){
+  const rows = list.map(r => `<tr>
+    <td><a href="${r.url}" ${r.external? 'target=\"_blank\" rel=\"noopener noreferrer\"' : ''}>${r.title}</a></td>
+    <td>${r.type||''}</td>
+    <td>${r.size||''}</td>
+  </tr>`).join('');
+  return `<div class=\"card\"><div class=\"table-wrap\"><table class=\"table\" aria-describedby=\"resources-desc\"><thead><tr><th>Title</th><th>Type</th><th>Size</th></tr></thead><tbody>${rows}</tbody></table></div></div>`;
+}
+
+const renderers = { events: renderEvents, announcements: renderAnnouncements, projects: renderProjects, members: renderMembers, resources: renderResources };
+
+(async function init(){
+  for (const el of mountpoints){
+    const url = el.getAttribute('data-json');
+    const component = el.getAttribute('data-component');
+    const limit = Number(el.getAttribute('data-limit')) || undefined;
+    try{
+      const data = await loadJSON(url);
+      el.innerHTML = renderers[component]?.(data, limit) || '';
+    }catch(err){
+      el.innerHTML = `<div class=\"card\"><p class=\"muted\">Unable to load content. Please try again later.</p></div>`;
+      console.error(err);
+    }
+  }
+  setupProjectsPage();
+  setupEventsPage();
+})();
+
+// Accessible lightbox (for gallery)
+window.initLightbox = function initLightbox(){
+  if (document.querySelector('.lightbox-backdrop')) return true;
+  const backdrop = document.createElement('div');
+  backdrop.className = 'lightbox-backdrop';
+  backdrop.innerHTML = `<div class=\"content\" role=\"dialog\" aria-modal=\"true\" aria-label=\"Image preview\"></div><button class=\"lightbox-close\" aria-label=\"Close\">Close</button>`;
+  document.body.appendChild(backdrop);
+  const close = () => { backdrop.classList.remove('open'); backdrop.querySelector('.content').innerHTML=''; };
+  backdrop.addEventListener('click', (e)=>{ if(e.target === backdrop) close(); });
+  backdrop.querySelector('.lightbox-close').addEventListener('click', close);
+  window.addEventListener('keydown', (e)=>{ if(e.key==='Escape') close(); });
+  return true;
+}
+
+(function enhanceLightbox(){
+  window.initLightbox();
+  document.querySelectorAll('.lightboxable').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = e.currentTarget;
+      const src = target.getAttribute('href');
+      const alt = target.getAttribute('data-alt') || target.querySelector('img')?.alt || 'Image';
+      const backdrop = document.querySelector('.lightbox-backdrop');
+      const content = backdrop.querySelector('.content');
+      content.innerHTML = `<img src=\"${src}\" alt=\"${alt}\">`;
+      backdrop.classList.add('open');
+    });
+  });
+})();
+
+// --- Page specific: Projects with filters/search ---
+async function setupProjectsPage(){
+  const wrapper = document.getElementById('projects-page');
+  if (!wrapper) return;
+  const listEl = document.getElementById('project-list');
+  const searchEl = document.getElementById('project-search');
+  const catEl = document.getElementById('project-category');
+  const gradeEl = document.getElementById('project-grade');
+  let data = [];
+  try{
+    data = await loadJSON('../assets/data/projects.json');
+  }catch(e){ listEl.innerHTML = `<p class=\"muted\">Could not load projects.</p>`; return; }
+
+  const categories = Array.from(new Set(data.flatMap(p=>p.category||[]))).sort();
+  const grades = Array.from(new Set(data.map(p=>p.grade))).sort();
+  catEl.innerHTML = `<option value=\"\">All categories</option>` + categories.map(c=>`<option value=\"${c}\">${c}</option>`).join('');
+  gradeEl.innerHTML = `<option value=\"\">All grades</option>` + grades.map(g=>`<option value=\"${g}\">${g}</option>`).join('');
+
+  function apply(){
+    const q = searchEl.value.toLowerCase();
+    const cat = catEl.value;
+    const grade = gradeEl.value;
+    const filtered = data.filter(p => {
+      const matchesQ = !q || [p.title, p.student, p.summary, ...(p.category||[])].join(' ').toLowerCase().includes(q);
+      const matchesCat = !cat || (p.category||[]).includes(cat);
+      const matchesGrade = !grade || p.grade === grade;
+      return matchesQ && matchesCat && matchesGrade;
+    });
+    listEl.innerHTML = renderProjects(filtered);
+    document.getElementById('project-count').textContent = `${filtered.length} of ${data.length}`;
+  }
+  [searchEl, catEl, gradeEl].forEach(el=> el.addEventListener('input', apply));
+  apply();
+}
+
+// --- Page specific: Events filter (category) ---
+async function setupEventsPage(){
+  const wrapper = document.getElementById('events-page');
+  if (!wrapper) return;
+  const listEl = document.getElementById('events-list');
+  const catEl = document.getElementById('events-category');
+  let data = [];
+  try{ data = await loadJSON('../assets/data/events.json'); }
+  catch{ listEl.innerHTML = `<p class=\"muted\">Could not load events.</p>`; return; }
+  const categories = Array.from(new Set(data.map(e=>e.category))).sort();
+  catEl.innerHTML = `<option value=\"\">All types</option>` + categories.map(c=>`<option value=\"${c}\">${c}</option>`).join('');
+  function apply(){
+    const cat = catEl.value;
+    let filtered = !cat ? data : data.filter(e=>e.category===cat);
+    listEl.innerHTML = renderEvents(filtered);
+  }
+  catEl.addEventListener('input', apply);
+  apply();
+}
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+[
+  {
+    "id": "proj-1",
+    "title": "Build a Solar Oven",
+    "student": "Jane Doe",
+    "grade": "Year 11",
+    "category": ["environment", "engineering"],
+    "summary": "A DIY solar cooker made from recycled materials.",
+    "images": ["assets/images/solar-oven-1.jpg"],
+    "detailsLink": "pages/projects/solar-oven.html"
+  },
+  {
+    "id": "proj-2",
+    "title": "Bio-plastic from Kelp",
+    "student": "Rangi Taiaroa",
+    "grade": "Year 12",
+    "category": ["environment", "chemistry"],
+    "summary": "Investigating biodegradable plastics derived from local seaweed.",
+    "images": ["assets/images/bioplastic-1.jpg"],
+    "detailsLink": "pages/projects/bioplastic.html"
+  },
+  {
+    "id": "proj-3",
+    "title": "Quake Safe Shelving",
+    "student": "Liam Patel",
+    "grade": "Year 9",
+    "category": ["engineering", "physics"],
+    "summary": "Designing shelf brackets that reduce toppling during earthquakes.",
+    "images": ["assets/images/quakesafe-1.jpg"],
+    "detailsLink": "pages/projects/quake-safe.html"
+  },
+  {
+    "id": "proj-4",
+    "title": "Optimising Hydroponic Basil",
+    "student": "Charlotte Ng",
+    "grade": "Year 10",
+    "category": ["biology", "agriculture"],
+    "summary": "Testing nutrient mixes to improve basil growth in a home system.",
+    "images": ["assets/images/hydro-basil-1.jpg"],
+    "detailsLink": "pages/projects/hydro-basil.html"
+  }
+]

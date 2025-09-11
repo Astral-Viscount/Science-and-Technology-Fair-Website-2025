@@ -1,47 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-NZ">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events</title>
-    <link rel="stylesheet" href="../css/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Events — Canterbury–Westland Science & Technology Fair</title>
+  <meta name="description" content="Upcoming workshops, deadlines, and the regional fair." />
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <script type="module" src="../assets/js/script.js" defer></script>
 </head>
 <body>
-
-<header class="navigation">
-    <nav>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html">
+        <img src="../assets/images/logo-placeholder.svg" alt="Fair logo" width="40" height="40" />
+        <span class="brand-title">Canterbury–Westland Science & Tech Fair</span>
+      </a>
+      <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
         <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a aria-current="page" href="events.html">Events</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="members.html">Members</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="announcements.html">Announcements</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
-    </nav>
-</header>
+        <div class="nav-ctas">
+          <a class="btn primary" href="projects.html#enter">Participate</a>
+          <a class="btn outline" href="contact.html#support">Support</a>
+          <button class="theme-toggle" aria-label="Toggle theme"><span class="theme-icon">🌓</span></button>
+        </div>
+      </nav>
+    </div>
+  </header>
 
-<div class="container">
-    <h1>Upcoming Events</h1>
-    <div id="events-list"></div>
-</div>
+  <main id="main" class="container" aria-describedby="events-desc">
+    <header class="page-header">
+      <nav class="breadcrumbs" aria-label="Breadcrumbs"><a href="../index.html">Home</a> / Events</nav>
+      <h1>Events</h1>
+      <p id="events-desc">Workshops, key deadlines, and the main fair. Dates display in New Zealand format.</p>
+    </header>
 
-<script>
-fetch('../assets/data/events.json')
-    .then(response => response.json())
-    .then(events => {
-        const container = document.getElementById('events-list');
-        events.forEach(event => {
-            const eventCard = document.createElement('div');
-            eventCard.classList.add('event-card');
-            eventCard.innerHTML = `
-                <h2>${event.title}</h2>
-                <p><strong>Date:</strong> ${event.date}</p>
-                <p>${event.description}</p>
-                <a href="${event.link}">Learn More</a>
-            `;
-            container.appendChild(eventCard);
-        });
-    })
-    .catch(error => console.error('Error loading events:', error));
-</script>
+    <section id="events-page">
+      <div class="filters">
+        <label for="events-category" class="muted">Filter:</label>
+        <select id="events-category" class="input" aria-label="Filter events by type"></select>
+      </div>
+      <div id="events-list" data-json="../assets/data/events.json" data-component="events" class="cards cards-2"></div>
+    </section>
+  </main>
 
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="../index.html">
+          <img src="../assets/images/logo-placeholder.svg" alt="Fair logo" width="40" height="40" />
+          <span class="brand-title">Canterbury–Westland Science & Tech Fair</span>
+        </a>
+        <p class="muted">An independent, volunteer-run event proudly supported by NIWA and our regional partners.</p>
+      </div>
+      <nav aria-label="Footer">
+        <h3 class="footer-heading">Explore</h3>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a aria-current="page" href="events.html">Events</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="announcements.html">Announcements</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h3 class="footer-heading">Contact</h3>
+        <address>
+          <p>Email: <a href="mailto:info@canterburysciencefair.co.nz">info@canterburysciencefair.co.nz</a></p>
+          <p>Christchurch, Aotearoa New Zealand</p>
+        </address>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p class="muted">© <span data-year></span> Canterbury–Westland Schools Science & Technology Fair.</p>
+      <p><a href="../sitemap.xml">Sitemap</a> • <a href="../robots.txt">Robots</a></p>
+    </div>
+  </footer>
 </body>
 </html>

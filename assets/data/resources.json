@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Student Guide",
+    "url": "assets/resources/student-guide.pdf",
+    "type": "PDF",
+    "size": "1.2 MB"
+  },
+  {
+    "title": "Display Board Template (PowerPoint)",
+    "url": "assets/resources/display-board-template.pptx",
+    "type": "PPTX",
+    "size": "2.1 MB"
+  },
+  {
+    "title": "Judging Criteria",
+    "url": "assets/resources/judging-criteria.pdf",
+    "type": "PDF",
+    "size": "800 KB"
+  },
+  {
+    "title": "Safety & Ethics Checklist",
+    "url": "assets/resources/safety-ethics.pdf",
+    "type": "PDF",
+    "size": "450 KB"
+  },
+  {
+    "title": "Teacher Pack",
+    "url": "assets/resources/teacher-pack.zip",
+    "type": "ZIP",
+    "size": "3.4 MB"
+  }
+]

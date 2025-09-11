@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Alex Thompson",
+    "role": "Fair Chair",
+    "bio": "Leads the organising committee and liaises with partners.",
+    "photo": "assets/images/headshot-alex.jpg",
+    "email": "alex@example.org"
+  },
+  {
+    "name": "Moana Williams",
+    "role": "Schools Liaison",
+    "bio": "Supports teachers and coordinates school entries.",
+    "photo": "assets/images/headshot-moana.jpg",
+    "email": "moana@example.org"
+  },
+  {
+    "name": "Dr Samir Khan",
+    "role": "Chief Judge",
+    "bio": "Oversees judging processes and criteria.",
+    "photo": "assets/images/headshot-samir.jpg"
+  },
+  {
+    "name": "Sophie Clarke",
+    "role": "Sponsorships",
+    "bio": "Manages sponsor relations and prize fund.",
+    "photo": "assets/images/headshot-sophie.jpg"
+  },
+  {
+    "name": "Hemi Ruru",
+    "role": "Logistics Coordinator",
+    "bio": "Venues, equipment, and on-the-day operations.",
+    "photo": "assets/images/headshot-hemi.jpg"
+  }
+]

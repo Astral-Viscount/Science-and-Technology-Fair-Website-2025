@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin — JSON Editor (Client-only)</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    .monospace{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+    textarea{min-height: 280px}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header" role="banner">
+  <!-- Top row: branding + CTAs -->
+  <div class="header-top container">
+    <div class="branding">
+      <a href="/index.html" class="brand">
+        <img src="../assets/images/canterbury-westland-schools-logo-favicon.png" alt="Fair logo" class="logo" width="48" height="48"/>
+        <div class="brand-text">
+          <h1 class="brand-title">Canterbury–Westland</h1>
+          <span class="brand-sub">Science &amp; Tech Fair</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="header-actions">
+      <a href="/pages/projects.html#enter" class="btn primary">Enter a project</a>
+      <a href="/pages/events.html" class="btn outline">View events</a>
+
+      <!-- mobile toggle -->
+      <button class="nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Bottom row: full-width navigation -->
+  <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+    <div class="container">
+      <ul>
+        <li><a href="/index.html" aria-current="page">Home</a></li>
+        <li><a href="/pages/about.html">About</a></li>
+        <li><a href="/pages/events.html">Events</a></li>
+        <li><a href="/pages/projects.html">Projects</a></li>
+
+        <li class="has-submenu">
+          <a href="/pages/for-teachers/index.html">Teachers</a>
+          <ul class="submenu">
+            <li><a href="/pages/for-teachers/resources.html">Resources</a></li>
+            <li><a href="/pages/for-teachers/guidelines.html">Guidelines</a></li>
+            <li><a href="/pages/for-teachers/supervising-projects.html">Supervising projects</a></li>
+          </ul>
+        </li>
+
+        <li class="has-submenu">
+          <a href="/pages/for-students/getting-started.html">Students</a>
+          <ul class="submenu">
+            <li><a href="/pages/for-students/getting-started.html">Getting started</a></li>
+            <li><a href="/pages/for-students/judging.html">Judging</a></li>
+            <li><a href="/pages/for-students/safety-requirements.html">Safety requirements</a></li>
+            <li><a href="/pages/for-students/ethics.html">Ethics</a></li>
+          </ul>
+        </li>
+
+        <li><a href="/pages/members.html">Members</a></li>
+        <li><a href="/pages/resources.html">Resources</a></li>
+        <li><a href="/pages/gallery.html">Gallery</a></li>
+        <li><a href="/pages/announcements.html">Announcements</a></li>
+        <li><a href="/pages/contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+  <main id="main" class="container">
+    <header class="page-header">
+      <h1>Admin: JSON Editor</h1>
+      <p class="muted">Client-only tool to load, edit, and export <code>assets/data/*.json</code>. Download changes and commit manually.</p>
+    </header>
+
+    <section class="grid grid-2">
+      <article class="card">
+        <h2>Load data</h2>
+        <div class="stack">
+          <label class="label" for="data-file">Choose file</label>
+          <select id="data-file" class="input">
+            <option value="events.json">events.json</option>
+            <option value="projects.json">projects.json</option>
+            <option value="members.json">members.json</option>
+            <option value="resources.json">resources.json</option>
+            <option value="announcements.json">announcements.json</option>
+          </select>
+          <button id="load" class="btn">Load</button>
+          <p id="status" class="muted" role="status" aria-live="polite"></p>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>Edit JSON</h2>
+        <textarea id="editor" class="input monospace" aria-label="JSON editor" spellcheck="false"></textarea>
+        <div class="row">
+          <button id="format" class="btn">Format</button>
+          <button id="validate" class="btn">Validate</button>
+          <button id="download" class="btn primary">Download</button>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    const fileSelect = document.getElementById('data-file');
+    const loadBtn = document.getElementById('load');
+    const editor = document.getElementById('editor');
+    const status = document.getElementById('status');
+
+    async function loadFile() {
+      const file = fileSelect.value;
+      status.textContent = 'Loading ' + file + '…';
+      try {
+        const res = await fetch(`../assets/data/${file}`);
+        if (!res.ok) throw new Error(res.status + ' ' + res.statusText);
+        const data = await res.json();
+        editor.value = JSON.stringify(data, null, 2);
+        status.textContent = 'Loaded ' + file;
+      } catch (err) {
+        status.textContent = 'Error: ' + err.message;
+      }
+    }
+
+    function formatJSON() {
+      try {
+        const obj = JSON.parse(editor.value);
+        editor.value = JSON.stringify(obj, null, 2);
+        status.textContent = 'Formatted.';
+      } catch (err) {
+        status.textContent = 'Invalid JSON: ' + err.message;
+      }
+    }
+
+    function validateJSON() {
+      try {
+        JSON.parse(editor.value);
+        status.textContent = 'Valid JSON.';
+      } catch (err) {
+        status.textContent = 'Invalid JSON: ' + err.message;
+      }
+    }
+
+    function downloadJSON() {
+      try {
+        const obj = JSON.parse(editor.value); // throws if invalid
+        const blob = new Blob([JSON.stringify(obj, null, 2)], { type: 'application/json' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = fileSelect.value;
+        a.click();
+        URL.revokeObjectURL(a.href);
+        status.textContent = 'Downloaded ' + fileSelect.value;
+      } catch (err) {
+        status.textContent = 'Fix JSON before downloading.';
+      }
+    }
+
+    loadBtn.addEventListener('click', loadFile);
+    document.getElementById('format').addEventListener('click', formatJSON);
+    document.getElementById('validate').addEventListener('click', validateJSON);
+    document.getElementById('download').addEventListener('click', downloadJSON);
+
+    // Load default
+    loadFile();
+  </script>
+</body>
+</html>

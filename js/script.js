@@ -1,1 +1,0 @@
-console.log(`WHAT YOU LOOKING AT LIL BRO! SYBAU and SMD FR`);

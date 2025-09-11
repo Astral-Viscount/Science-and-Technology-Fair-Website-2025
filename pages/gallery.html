@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Projects — Canterbury–Westland Science & Technology Fair</title>
-  <meta name="description" content="Browse student projects and filter by category or year level." />
+  <title>Gallery — Canterbury–Westland Science & Technology Fair</title>
+  <meta name="description" content="Photos and videos from our fair and workshops." />
   <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/style.css" />
@@ -26,15 +26,15 @@
           <li><a href="../index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="events.html">Events</a></li>
-          <li><a aria-current="page" href="projects.html">Projects</a></li>
+          <li><a href="projects.html">Projects</a></li>
           <li><a href="members.html">Members</a></li>
           <li><a href="resources.html">Resources</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
+          <li><a aria-current="page" href="gallery.html">Gallery</a></li>
           <li><a href="announcements.html">Announcements</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
         <div class="nav-ctas">
-          <a class="btn primary" href="#enter">Participate</a>
+          <a class="btn primary" href="projects.html#enter">Participate</a>
           <a class="btn outline" href="contact.html#support">Support</a>
           <button class="theme-toggle" aria-label="Toggle theme"><span class="theme-icon">🌓</span></button>
         </div>
@@ -44,30 +44,17 @@
 
   <main id="main" class="container">
     <header class="page-header">
-      <nav class="breadcrumbs" aria-label="Breadcrumbs"><a href="../index.html">Home</a> / Projects</nav>
-      <h1>Projects</h1>
-      <p>Explore example projects from past fairs. Use the search and filters to find something specific.</p>
+      <nav class="breadcrumbs" aria-label="Breadcrumbs"><a href="../index.html">Home</a> / Gallery</nav>
+      <h1>Gallery</h1>
+      <p>Highlights from recent years. Click an image to view larger.</p>
     </header>
 
-    <section id="projects-page" aria-describedby="project-help">
-      <p id="project-help" class="muted">Tip: search by student name, topic, or category.</p>
-      <div class="filters">
-        <input id="project-search" class="input search" type="search" placeholder="Search projects" aria-label="Search projects" />
-        <select id="project-category" class="input" aria-label="Filter by category"></select>
-        <select id="project-grade" class="input" aria-label="Filter by year level"></select>
-        <span class="muted" aria-live="polite"><span id="project-count"></span> shown</span>
-      </div>
-      <div id="project-list" class="cards cards-3"></div>
-    </section>
-
-    <section id="enter" class="cta-band">
-      <div class="container cta-inner">
-        <div>
-          <h2>Enter your project</h2>
-          <p>Entries are managed by schools. Talk to your science teacher to get started.</p>
-        </div>
-        <p><a class="btn primary" href="contact.html">Ask a question</a></p>
-      </div>
+    <section class="gallery-grid" aria-label="Image gallery">
+      <a href="../assets/images/gallery-1.jpg" class="lightboxable" data-alt="Students presenting a project"><img src="../assets/images/gallery-1-thumb.jpg" alt="Students presenting a project" loading="lazy" width="600" height="400"></a>
+      <a href="../assets/images/gallery-2.jpg" class="lightboxable" data-alt="Judges speaking with students"><img src="../assets/images/gallery-2-thumb.jpg" alt="Judges speaking with students" loading="lazy" width="600" height="400"></a>
+      <a href="../assets/images/gallery-3.jpg" class="lightboxable" data-alt="Workshop participants"><img src="../assets/images/gallery-3-thumb.jpg" alt="Workshop participants" loading="lazy" width="600" height="400"></a>
+      <a href="../assets/images/gallery-4.jpg" class="lightboxable" data-alt="Award ceremony"><img src="../assets/images/gallery-4-thumb.jpg" alt="Award ceremony" loading="lazy" width="600" height="400"></a>
+      <!-- Add more as needed; use placeholder images if missing -->
     </section>
   </main>
 
@@ -85,9 +72,9 @@
         <ul class="footer-links">
           <li><a href="about.html">About</a></li>
           <li><a href="events.html">Events</a></li>
-          <li><a aria-current="page" href="projects.html">Projects</a></li>
+          <li><a href="projects.html">Projects</a></li>
           <li><a href="resources.html">Resources</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
+          <li><a aria-current="page" href="gallery.html">Gallery</a></li>
           <li><a href="announcements.html">Announcements</a></li>
         </ul>
       </nav>

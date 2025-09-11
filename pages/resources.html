@@ -3,21 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>NIWA Canterbury Westland Schools Science & Technology Fair</title>
-  <meta name="description" content="An annual celebration of student science and technology across Canterbury and Westland.">
-  <meta property="og:title" content="NIWA Canterbury–Westland Schools Science & Technology Fair">
-  <meta property="og:description" content="Enter a project, attend events, and explore resources.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://example.org/">
-  <meta property="og:image" content="assets/images/og-hero.jpg">
-  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+  <title>Resources — Canterbury–Westland Science & Technology Fair</title>
+  <meta name="description" content="Download guides, templates, and judging criteria for the fair." />
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <script type="module" src="assets/js/script.js" defer></script>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <script type="module" src="../assets/js/script.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
-<header class="site-header" role="banner">
+  <header class="site-header" role="banner">
   <!-- Top row: branding + CTAs -->
   <div class="header-top container">
     <div class="branding">
@@ -82,49 +77,23 @@
   </nav>
 </header>
 
-  <main id="main">
-    <section class="hero" role="region" aria-label="Hero">
-      <div class="container hero-inner">
-        <div>
-          <h1>Explore. Build. Discover.</h1>
-          <p>Join hundreds of ākonga from Years 7–13 as they investigate questions that matter and build solutions that inspire.</p>
-          <div class="hero-ctas">
-            <a class="btn primary" href="pages/projects.html#enter">Enter a project</a>
-            <a class="btn" href="pages/events.html">View events</a>
-          </div>
-        </div>
-        <img src="assets/images/science-fair-empty-showcase.jpg" alt="Students discussing a science project" width="800" height="500" loading="lazy" />
-      </div>
-    </section>
+  <main id="main" class="container">
+    <header class="page-header">
+      <nav class="breadcrumbs" aria-label="Breadcrumbs"><a href="../index.html">Home</a> / Resources</nav>
+      <h1>Resources</h1>
+      <p id="resources-desc">Guides, templates, and forms to help you plan and present your project. PDFs are print-friendly.</p>
+    </header>
 
-    <section class="container">
-      <h2>Upcoming</h2>
-      <div data-json="assets/data/events.json" data-component="events" data-limit="3" class="cards cards-3"></div>
-      <p><a class="btn" href="pages/events.html">All events</a></p>
-    </section>
-
-    <section class="container">
-      <h2>Latest announcements</h2>
-      <div data-json="assets/data/announcements.json" data-component="announcements" data-limit="3" class="cards cards-3"></div>
-      <p><a class="btn" href="pages/announcements.html">More news</a></p>
-    </section>
-
-    <section class="cta-band">
-      <div class="container cta-inner">
-        <div>
-          <h2>Resources for students & teachers</h2>
-          <p>Download guides, templates, and judging criteria to help you prepare.</p>
-        </div>
-        <p><a class="btn primary" href="pages/resources.html">Browse resources</a></p>
-      </div>
+    <section>
+      <div data-json="../assets/data/resources.json" data-component="resources"></div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <a class="brand" href="index.html">
-          <img src="assets/images/logo-placeholder.svg" alt="Fair logo" width="40" height="40" />
+        <a class="brand" href="../index.html">
+          <img src="../assets/images/logo-placeholder.svg" alt="Fair logo" width="40" height="40" />
           <span class="brand-title">Canterbury–Westland Science & Tech Fair</span>
         </a>
         <p class="muted">An independent, volunteer-run event proudly supported by NIWA and our regional partners.</p>
@@ -132,12 +101,12 @@
       <nav aria-label="Footer">
         <h3 class="footer-heading">Explore</h3>
         <ul class="footer-links">
-          <li><a href="pages/about.html">About</a></li>
-          <li><a href="pages/events.html">Events</a></li>
-          <li><a href="pages/projects.html">Projects</a></li>
-          <li><a href="pages/resources.html">Resources</a></li>
-          <li><a href="pages/gallery.html">Gallery</a></li>
-          <li><a href="pages/announcements.html">Announcements</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a aria-current="page" href="resources.html">Resources</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="announcements.html">Announcements</a></li>
         </ul>
       </nav>
       <div>
@@ -150,7 +119,7 @@
     </div>
     <div class="container footer-bottom">
       <p class="muted">© <span data-year></span> Canterbury–Westland Schools Science & Technology Fair.</p>
-      <p><a href="sitemap.xml">Sitemap</a> • <a href="robots.txt">Robots</a></p>
+      <p><a href="../sitemap.xml">Sitemap</a> • <a href="../robots.txt">Robots</a></p>
     </div>
   </footer>
 </body>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400" role="img" aria-labelledby="t">
+  <title id="t">Headshot Placeholder</title>
+  <rect width="400" height="400" rx="24" fill="#e5e7eb"/>
+  <circle cx="200" cy="150" r="70" fill="#cbd5e1"/>
+  <rect x="80" y="240" width="240" height="110" rx="32" fill="#cbd5e1"/>
+</svg>
