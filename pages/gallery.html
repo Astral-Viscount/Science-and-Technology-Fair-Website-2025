@@ -81,16 +81,34 @@
     <header class="page-header">
       <nav class="breadcrumbs" aria-label="Breadcrumbs"><a href="../index.html">Home</a> / Gallery</nav>
       <h1>Gallery</h1>
-      <p>Highlights from recent years. Click an image to view larger.</p>
+      <p>Highlights from recent years.</p>
     </header>
 
-    <section class="gallery-grid" aria-label="Image gallery">
-      <a href="../assets/images/student-showing-project.png" class="lightboxable" data-alt="Students presenting a project"><img src="../assets/images/student-showing-project.png" alt="Students presenting a project" loading="lazy" width="600" height="400"></a>
-      <a href="../assets/images/3rd-Thimeth.jpg" class="lightboxable" data-alt="Students presenting a project"><img src="../assets/images/3rd-Thimeth.jpg" alt="Students presenting a project" loading="lazy" width="600" height="400"></a>
-      <a href="../assets/images/project.jpg" class="lightboxable" data-alt="Students presenting a project"><img src="../assets/images/project.jpg" alt="Students presenting a project" loading="lazy" width="600" height="400"></a>
-      <a href="../assets/images/science-fair.jpg" class="lightboxable" data-alt="Tech Fair"><img src="../assets/images/science-fair.jpg" alt="Tech Fair" loading="lazy" width="600" height="400"></a>
-      <!-- Add more as needed; use placeholder images if missing -->
-    </section>
+<section class="gallery-slideshow" aria-label="Image gallery slideshow">
+  <div class="slides">
+    <div class="slide active">
+      <img src="../assets/images/student-showing-project.png" alt="Students presenting a project" loading="lazy">
+    </div>
+    <div class="slide">
+      <img src="../assets/images/3rd-Thimeth.jpg" alt="Students presenting a project" loading="lazy">
+    </div>
+    <div class="slide">
+      <img src="../assets/images/project.jpg" alt="Students presenting a project" loading="lazy">
+    </div>
+    <div class="slide">
+      <img src="../assets/images/science-fair.jpg" alt="Tech Fair" loading="lazy">
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <button class="prev" aria-label="Previous slide">❮</button>
+  <button class="next" aria-label="Next slide">❯</button>
+
+  <!-- Dots -->
+  <div class="dots" role="tablist"></div>
+</section>
+
+
   </main>
 
 <footer class="site-footer">

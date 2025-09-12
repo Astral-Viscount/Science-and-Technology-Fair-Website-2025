@@ -98,6 +98,71 @@ a {
   width: 80%;             /* make them fill card width */
   border: 1px solid color-mix(in oklab, var(--color-text), transparent 85%);
 }
+.gallery-slideshow {
+  position: relative;
+  max-width: 900px;
+  margin: 2rem auto;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.gallery-slideshow .slides {
+  display: flex;
+  transition: transform 0.6s ease;
+}
+
+.gallery-slideshow .slide {
+  min-width: 100%;
+  flex-shrink: 0;
+}
+
+.gallery-slideshow img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+  cursor: pointer; /* makes it clear you can click */
+}
+
+/* Controls */
+.gallery-slideshow .prev,
+.gallery-slideshow .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: .6em;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 1.5rem;
+}
+
+.gallery-slideshow .prev { left: 10px; }
+.gallery-slideshow .next { right: 10px; }
+
+/* Dots */
+.gallery-slideshow .dots {
+  text-align: center;
+  margin-top: .6rem;
+}
+
+.gallery-slideshow .dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 4px;
+  background: var(--color-muted);
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.gallery-slideshow .dot.active {
+  background: var(--color-primary);
+}
+
 
 /* Top row: logo + CTAs */
 .header-top{

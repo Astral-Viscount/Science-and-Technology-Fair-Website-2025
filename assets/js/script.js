@@ -458,4 +458,42 @@ async function setupEventsPage() {
   mo.observe(document.body, { childList: true, subtree: true });
 })();
 
+function setupSlideshow() {
+  const slideshow = document.querySelector('.gallery-slideshow');
+  if (!slideshow) return;
+
+  const slides = slideshow.querySelector('.slides');
+  const slideEls = Array.from(slideshow.querySelectorAll('.slide'));
+  const dotsContainer = slideshow.querySelector('.dots');
+  let index = 0;
+
+  // Create dots
+  slideEls.forEach((_, i) => {
+    const dot = document.createElement('span');
+    dot.className = 'dot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', () => goToSlide(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = dotsContainer.querySelectorAll('.dot');
+
+  function goToSlide(i) {
+    index = (i + slideEls.length) % slideEls.length;
+    slides.style.transform = `translateX(-${index * 100}%)`;
+    dots.forEach((d, j) => d.classList.toggle('active', j === index));
+  }
+
+  slideshow.querySelector('.prev').addEventListener('click', () => goToSlide(index - 1));
+  slideshow.querySelector('.next').addEventListener('click', () => goToSlide(index + 1));
+
+  // Hook into your lightbox
+  slideEls.forEach(slide => {
+    const img = slide.querySelector('img');
+    img.addEventListener('click', () => {
+      openLightbox(img.src, img.alt); // assumes you already have openLightbox()
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', setupSlideshow);
 
