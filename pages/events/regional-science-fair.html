@@ -5,37 +5,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Regional Science Fair — Event Details</title>
   <meta name="description" content="Details for the 2025 Regional Science Fair at Christchurch Town Hall." />
-  <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../../assets/images/favicon.png" type="image/svg+xml" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../assets/css/style.css" />
   <script type="module" src="../../assets/js/script.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="../../index.html">
-        <img src="../../assets/images/logo-placeholder.svg" alt="Fair logo" width="40" height="40" />
-        <span class="brand-title">Canterbury–Westland Science & Tech Fair</span>
+  <header class="site-header" role="banner">
+  <!-- Top row: branding + CTAs -->
+  <div class="header-top container">
+    <div class="branding">
+      <a href="/index.html" class="brand">
+        <img src="../../assets/images/favicon.png" alt="Fair logo" class="logo" width="48" height="48"/>
+        <div class="brand-text">
+          <h1 class="brand-title">Canterbury–Westland</h1>
+          <span class="brand-sub">Science &amp; Tech Fair</span>
+        </div>
       </a>
-      <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span>
-      </button>
-      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
-        <ul>
-          <li><a href="../../index.html">Home</a></li>
-          <li><a href="../about.html">About</a></li>
-          <li><a aria-current="page" href="../events.html">Events</a></li>
-          <li><a href="../projects.html">Projects</a></li>
-          <li><a href="../members.html">Members</a></li>
-          <li><a href="../resources.html">Resources</a></li>
-          <li><a href="../gallery.html">Gallery</a></li>
-          <li><a href="../announcements.html">Announcements</a></li>
-          <li><a href="../contact.html">Contact</a></li>
-        </ul>
-      </nav>
     </div>
-  </header>
+
+    <div class="header-actions">
+      <a href="/pages/projects.html#enter" class="btn primary">Enter a project</a>
+      <a href="/pages/events.html" class="btn outline">View events</a>
+      <button class="theme-toggle" aria-label="Toggle theme"><span class="theme-icon">🌓</span></button>
+
+      <!-- mobile toggle -->
+      <button class="nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Bottom row: full-width navigation -->
+  <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+    <div class="container">
+      <ul>
+        <li><a href="/index.html" aria-current="page">Home</a></li>
+        <li><a href="/pages/about.html">About</a></li>
+        <li><a href="/pages/events.html">Events</a></li>
+        <li><a href="/pages/projects.html">Projects</a></li>
+
+        <li class="has-submenu">
+          <a href="/pages/for-teachers/index.html">Teachers</a>
+          <ul class="submenu">
+            <li><a href="/pages/for-teachers/resources.html">Resources</a></li>
+            <li><a href="/pages/for-teachers/guidelines.html">Guidelines</a></li>
+            <li><a href="/pages/for-teachers/supervising-projects.html">Supervising projects</a></li>
+          </ul>
+        </li>
+
+        <li class="has-submenu">
+          <a href="/pages/for-students/getting-started.html">Students</a>
+          <ul class="submenu">
+            <li><a href="/pages/for-students/getting-started.html">Getting started</a></li>
+            <li><a href="/pages/for-students/judging.html">Judging</a></li>
+            <li><a href="/pages/for-students/safety-requirements.html">Safety requirements</a></li>
+            <li><a href="/pages/for-students/ethics.html">Ethics</a></li>
+          </ul>
+        </li>
+
+        <li><a href="/pages/members.html">Members</a></li>
+        <li><a href="/pages/resources.html">Resources</a></li>
+        <li><a href="/pages/gallery.html">Gallery</a></li>
+        <li><a href="/pages/announcements.html">Announcements</a></li>
+        <li><a href="/pages/contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
 
   <main id="main" class="container">
     <nav class="breadcrumbs" aria-label="Breadcrumbs"><a href="../../index.html">Home</a> / <a href="../events.html">Events</a> / Regional Science Fair</nav>
@@ -57,8 +97,36 @@
   </main>
 
   <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="index.html">
+          <img src="..\..\assets\images\niwa-logo.jpg" alt="Fair logo" width="300" height="40" />
+          <span class="brand-title">Canterbury–Westland Science & Tech Fair</span>
+        </a>
+        <p class="muted">An independent, volunteer-run event proudly supported by NIWA and our regional partners.</p>
+      </div>
+      <nav aria-label="Footer">
+        <h3 class="footer-heading">Explore</h3>
+        <ul class="footer-links">
+          <li><a href="pages/about.html">About</a></li>
+          <li><a href="pages/events.html">Events</a></li>
+          <li><a href="pages/projects.html">Projects</a></li>
+          <li><a href="pages/resources.html">Resources</a></li>
+          <li><a href="pages/gallery.html">Gallery</a></li>
+          <li><a href="pages/announcements.html">Announcements</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h3 class="footer-heading">Contact</h3>
+        <address>
+          <p>Email: <a href="mailto:info@canterburysciencefair.co.nz">info@canterburysciencefair.co.nz</a></p>
+          <p>Christchurch, Aotearoa New Zealand</p>
+        </address>
+      </div>
+    </div>
     <div class="container footer-bottom">
       <p class="muted">© <span data-year></span> Canterbury–Westland Schools Science & Technology Fair.</p>
+      <p><a href="sitemap.xml">Sitemap</a> • <a href="robots.txt">Robots</a></p>
     </div>
   </footer>
 </body>

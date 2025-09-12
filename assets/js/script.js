@@ -457,3 +457,5 @@ async function setupEventsPage() {
   const mo = new MutationObserver(() => { try { enhanceLightboxLinks(); } catch (err) { /* ignore */ } });
   mo.observe(document.body, { childList: true, subtree: true });
 })();
+
+

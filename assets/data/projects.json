@@ -6,7 +6,7 @@
     "grade": "Year 11",
     "category": ["environment", "engineering"],
     "summary": "A DIY solar cooker made from recycled materials.",
-    "images": ["assets/images/solar-oven-1.jpg"],
+    "images": ["/assets/images/solar-oven.jpg"],
     "detailsLink": "pages/projects/solar-oven.html"
   },
   {
@@ -16,7 +16,7 @@
     "grade": "Year 12",
     "category": ["environment", "chemistry"],
     "summary": "Investigating biodegradable plastics derived from local seaweed.",
-    "images": ["assets/images/bioplastic-1.jpg"],
+    "images": ["/assets/images/bioplastic.png"],
     "detailsLink": "pages/projects/bioplastic.html"
   },
   {
@@ -26,7 +26,7 @@
     "grade": "Year 9",
     "category": ["engineering", "physics"],
     "summary": "Designing shelf brackets that reduce toppling during earthquakes.",
-    "images": ["assets/images/quakesafe-1.jpg"],
+    "images": ["/assets/images/quake.jpg"],
     "detailsLink": "pages/projects/quake-safe.html"
   },
   {
@@ -36,7 +36,7 @@
     "grade": "Year 10",
     "category": ["biology", "agriculture"],
     "summary": "Testing nutrient mixes to improve basil growth in a home system.",
-    "images": ["assets/images/hydro-basil-1.jpg"],
+    "images": ["/assets/images/basil.jpg"],
     "detailsLink": "pages/projects/hydro-basil.html"
   }
 ]

@@ -61,6 +61,10 @@ a:focus-visible, button:focus-visible, .btn:focus-visible{outline:3px solid var(
 .btn.primary{background:var(--color-primary); color:white; border-color:transparent}
 .btn.outline{background:transparent}
 
+a {
+  text-decoration: none;
+}
+
 /* Header */
 .skip-link{position:absolute; left:-9999px}
 .skip-link:focus{left:16px; top:16px; z-index:999; background:var(--color-accent); color:#111; padding:.5em 1em; border-radius:8px}
@@ -72,6 +76,27 @@ a:focus-visible, button:focus-visible, .btn:focus-visible{outline:3px solid var(
   border-bottom:1px solid color-mix(in oklab, var(--color-text), transparent 90%);
   z-index:10000;
   will-change:transform;
+}
+
+/* Project card images */
+.card img {
+  border-radius: 12px;     /* soften corners */
+  margin-bottom: 12px;     /* space between image and text */
+  box-shadow: var(--shadow); /* optional: give them a soft shadow */
+  object-fit: cover;       /* crop instead of stretching */
+  width: 100%;             /* make them fill card width */
+  height: 200px;           /* fixed height for consistency */
+  border: 1px solid color-mix(in oklab, var(--color-text), transparent 85%);
+}
+
+.gallery-grid img {
+  justify-content: center;
+  border-radius: 12px;     /* soften corners */
+  margin-bottom: 12px;     /* space between image and text */
+  box-shadow: var(--shadow); /* optional: give them a soft shadow */
+  object-fit: cover;       /* crop instead of stretching */
+  width: 80%;             /* make them fill card width */
+  border: 1px solid color-mix(in oklab, var(--color-text), transparent 85%);
 }
 
 /* Top row: logo + CTAs */
@@ -96,6 +121,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible{outline:3px solid var(
   font-size:1rem;
   margin:0;
 }
+
 .header-actions{
   display:flex;
   align-items:center;
@@ -105,14 +131,16 @@ a:focus-visible, button:focus-visible, .btn:focus-visible{outline:3px solid var(
 /* Second row: nav spans entire screen width */
 /* Full-width nav bar */
 .main-nav {
-  width: 100vw;                  /* Span entire viewport width */
+  /* span the full page but don't use 100vw (it causes horizontal overflow)  left: 0;
+  right: 0;
+  width: 100%;        /* <- use 100% instead of 100vw */
   margin: 0;
   padding: 0;
   background: var(--color-bg);
   border-top: 1px solid color-mix(in oklab, var(--color-text), transparent 92%);
   border-bottom: 1px solid color-mix(in oklab, var(--color-text), transparent 92%);
+  box-sizing: border-box; /* ensure borders/padding don't expand width */
 }
-
 /* ensure the .container inside the nav doesn't constrain layout — let nav be full width */
 .main-nav .container {
   max-width: none;
@@ -257,7 +285,24 @@ a:focus-visible, button:focus-visible, .btn:focus-visible{outline:3px solid var(
 }
 
 /* Theme toggle */
-.theme-toggle{border:1px solid color-mix(in oklab, var(--color-text), transparent 80%); background:transparent; border-radius:12px; padding:.6em}
+/* Theme toggle */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .6em .9em; /* match .btn */
+  border-radius: 10px; /* match .btn radius */
+  border: 1px solid color-mix(in oklab, var(--color-text), transparent 80%);
+  background: var(--color-bg-soft);
+  box-shadow: var(--shadow); /* same depth as .btn */
+  font: inherit; /* ensure text sizing matches */
+  line-height: 1.2;
+  cursor: pointer;
+}
+.theme-toggle:hover {
+  transform: translateY(-1px); /* same hover lift as .btn */
+}
+
 
 /* Hero */
 .hero{

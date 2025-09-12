@@ -8,20 +8,13 @@
   },
   {
     "id": "announce-2",
-    "title": "New Sustainability Prize",
-    "date": "2025-06-02",
-    "summary": "Thanks to a new sponsor, we're introducing an environmental innovation award.",
-    "link": "pages/announcements.html"
-  },
-  {
-    "id": "announce-3",
     "title": "Volunteer Judges Wanted",
     "date": "2025-07-01",
     "summary": "Scientists, engineers, and educators: help judge projects at the fair.",
     "link": "pages/contact.html"
   },
   {
-    "id": "announce-4",
+    "id": "announce-3",
     "title": "Workshop Registrations Open",
     "date": "2025-05-28",
     "summary": "Free student workshop at Ara Institute. Spaces are limited.",
