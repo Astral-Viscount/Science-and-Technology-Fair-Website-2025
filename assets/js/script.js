@@ -426,7 +426,7 @@ async function setupEventsPage() {
   const catEl = document.getElementById('events-category');
   let data = [];
   try {
-    data = await loadJSON('/assets/data/events.json');
+    data = await loadJSON('../assets/data/events.json');
   } catch (e) {
     if (listEl) listEl.innerHTML = `<p class="muted">Could not load events.</p>`;
     return;
