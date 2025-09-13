@@ -7,7 +7,7 @@
     "location": "Christchurch Town Hall",
     "description": "A competition showcasing student STEM projects from across the region.",
     "category": "competition",
-    "link": "pages/events/regional-science-fair.html"
+    "link": "../../pages/events/regional-science-fair.html"
   },
   {
     "id": "entries-close-2025",
@@ -17,7 +17,7 @@
     "location": "Online via schools",
     "description": "Deadline for schools to submit entry lists for the regional fair.",
     "category": "deadline",
-    "link": "pages/events/entries-close.html"
+    "link": "../../pages/events/entries-close.html"
   },
   {
     "id": "workshop-chch-2025",
@@ -27,7 +27,7 @@
     "location": "Ara Institute of Canterbury",
     "description": "Hands-on session covering fair rules, ethics, and presentation tips.",
     "category": "workshop",
-    "link": "pages/events/workshop-planning.html"
+    "link": "../../pages/events/workshop-planning.html"
   },
   {
     "id": "awards-evening-2025",
@@ -37,6 +37,6 @@
     "location": "Christchurch Town Hall",
     "description": "Prizegiving and celebration of student achievements.",
     "category": "ceremony",
-    "link": "pages/events/awards-evening.html"
+    "link": "../../pages/events/awards-evening.html"
   }
 ]
