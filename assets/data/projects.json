@@ -7,7 +7,7 @@
     "category": ["environment", "engineering"],
     "summary": "A DIY solar cooker made from recycled materials.",
     "images": ["/assets/images/solar-oven.jpg"],
-    "detailsLink": "pages/projects/solar-oven.html"
+    "detailsLink": "/pages/projects/solar-oven.html"
   },
   {
     "id": "proj-2",
@@ -17,7 +17,7 @@
     "category": ["environment", "chemistry"],
     "summary": "Investigating biodegradable plastics derived from local seaweed.",
     "images": ["/assets/images/bioplastic.png"],
-    "detailsLink": "pages/projects/bioplastic.html"
+    "detailsLink": "/pages/projects/bioplastic.html"
   },
   {
     "id": "proj-3",
@@ -27,7 +27,7 @@
     "category": ["engineering", "physics"],
     "summary": "Designing shelf brackets that reduce toppling during earthquakes.",
     "images": ["/assets/images/quake.jpg"],
-    "detailsLink": "pages/projects/quake-safe.html"
+    "detailsLink": "/pages/projects/quake-safe.html"
   },
   {
     "id": "proj-4",
@@ -37,6 +37,6 @@
     "category": ["biology", "agriculture"],
     "summary": "Testing nutrient mixes to improve basil growth in a home system.",
     "images": ["/assets/images/basil.jpg"],
-    "detailsLink": "pages/projects/hydro-basil.html"
+    "detailsLink": "/pages/projects/hydro-basil.html"
   }
 ]
